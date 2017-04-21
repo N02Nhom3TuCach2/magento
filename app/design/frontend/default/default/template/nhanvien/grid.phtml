@@ -1,0 +1,40 @@
+<!-- Page Title -->
+<div class="page-title">
+    <h2><?php echo $this->__('Nhân viên Grid') ?></h2>
+</div>
+<?php echo $this->getPagerHtml() ?> <!--Add Paging-->
+<table id="my-person-table" class="data-table">
+    <colgroup>
+        <col width="1">
+        <col>
+        <col width="1">
+        <col width="1">
+        <col>
+    </colgroup>
+    <thead>
+    <tr class="first last">
+        <th><?php echo $this->__('STT')?></th>
+        <th><?php echo $this->__('Họ và tên')?></th>
+        <th><?php echo $this->__('Ngày sinh')?></th>
+        <th><?php echo $this->__('Địa chỉ Email')?></th>
+        <th><?php echo $this->__('Địa chỉ Facebook')?></th>
+        <th><?php echo $this->__('Giới tính')?></th>
+        <th><?php echo $this->__('Trạng thái')?></th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php foreach($this->getCollection() as $nhanvien): ?>
+        <tr>
+            <td><?php echo $nhanvien->getId();?></td>
+            <td><?php echo $nhanvien->getData('hoten')?></td>
+            <td><?php echo Mage::helper('core')->formatDate($nhanvien->getData('ngaysinh'))?></td>
+            <td><?php echo $nhanvien->getData('email')?></td>
+            <td><?php echo $nhanvien->getData('facebook_url')?></td>
+            <td><?php echo $this->getgioitinhLabel($nhanvien)?></td>
+            <td><?php echo $this->gettrangthaiLabel($nhanvien)?></td>
+        </tr>
+    <?php endforeach ?>
+    </tbody>
+</table>
+
+<script type="text/javascript">decorateTable('my-person-table')</script>

@@ -28,6 +28,24 @@
             </updates>
         </layout>
     </adminhtml>
+    <frontend>
+        <routers>
+            <nhanvien>
+                <use>standard</use>
+                <args>
+                    <module>Quanly_Nhanvien</module>
+                    <frontName>nhanvien</frontName>
+                </args>
+            </nhanvien>
+        </routers>
+        <layout>
+            <updates>
+                <nhanvien>
+                    <file>nhanvien.xml</file>
+                </nhanvien>
+            </updates>
+        </layout>
+    </frontend>
     <global>
         <!--Khai báo model, resource model-->
         <models>

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <nhanvien_index_index>
+        <reference name="content">
+            <block type="nhanvien/grid" template="nhanvien/grid.phtml" name="nhanvien_grid" >
+                <block type="page/html_pager" name="nhanvien_pager"/>
+            </block>
+        </reference>
+    </nhanvien_index_index>
+</layout>
