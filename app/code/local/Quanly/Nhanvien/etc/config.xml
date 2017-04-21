@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <!--Version của module-->
+        <Quanly_Nhanvien>
+            <version>0.1.1</version>
+        </Quanly_Nhanvien>
+    </modules>
+    <!--Khai báo admin router-->
+    <admin>
+        <routers>
+            <nhanvienshopadmin>
+                <use>admin</use>
+                <args>
+                    <module>Quanly_Nhanvien</module>
+                    <frontName>nhanvienshopadmin</frontName>
+                </args>
+            </nhanvienshopadmin>
+        </routers>
+    </admin>
+    <adminhtml>
+        <!-- Khai báo file layout trong admin-->
+        <layout>
+            <updates>
+                <nhanvien>
+                    <file>nhanvienshop.xml</file>
+                </nhanvien>
+            </updates>
+        </layout>
+    </adminhtml>
+    <global>
+        <!--Khai báo model, resource model-->
+        <models>
+            <nhanvien>
+                <class>Quanly_Nhanvien_Model</class>
+                <resourceModel>nhanvien_mysql4</resourceModel>
+            </nhanvien>
+            <nhanvien_mysql4>
+                <class>Quanly_Nhanvien_Model_Mysql4</class>
+                <entities>
+                    <nhanvienshop>
+                        <table>quanly_nhanvien</table>
+                    </nhanvienshop>
+                </entities>
+            </nhanvien_mysql4>
+        </models>
+        <!--Khai báo resource để connect và thao tác với database được-->
+        <resources>
+            <nhanvien_setup>
+                <setup>
+                    <module>Quanly_Nhanvien</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </nhanvien_setup>
+            <nhanvien_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </nhanvien_write>
+            <nhanvien_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </nhanvien_read>
+        </resources>
+        <!--Khai báo block để có thể dùng được-->
+        <blocks>
+            <nhanvien>
+                <class>Quanly_Nhanvien_Block</class>
+            </nhanvien>
+        </blocks>
+        <!--Khai báo helper-->
+        <helpers>
+            <nhanvien>
+                <class>Quanly_Nhanvien_Helper</class>
+            </nhanvien>
+        </helpers>
+    </global>
+
+</config>

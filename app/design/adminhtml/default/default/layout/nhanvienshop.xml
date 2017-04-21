@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <nhanvienshopadmin_adminhtml_nhanvienshop_index>
+        <reference name="content">
+            <block type="nhanvien/adminhtml_nhanvienshop" name="nhanvien" />
+        </reference>
+    </nhanvienshopadmin_adminhtml_nhanvienshop_index>
+</layout>
